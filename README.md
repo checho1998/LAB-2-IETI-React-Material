@@ -150,6 +150,8 @@ Read more about how to organize your components [here] (https://reactjs.org/docs
 
 4. Add the Login component to the `App.js` render method in order to test your login component.
 
+![Imagenes](https://github.com/checho1998/LAB-2-IETI-React-Material/blob/master/Imagenes/2.PNG)
+
 
 ## Part 2: Enable App Navigation 
 
