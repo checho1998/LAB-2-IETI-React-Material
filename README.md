@@ -267,6 +267,6 @@ This will prevent the user authentication every time!
 
 Tip: You can use the Google Chrome Developer tools under the Application tab to explore the Local Storage. 
    
-![Imagenes](https://github.com/checho1998/LAB-2-IETI-React-Material/blob/master/Imagenes/7.PNG)
-
 ![Imagenes](https://github.com/checho1998/LAB-2-IETI-React-Material/blob/master/Imagenes/8.PNG)
+
+![Imagenes](https://github.com/checho1998/LAB-2-IETI-React-Material/blob/master/Imagenes/7.PNG)
