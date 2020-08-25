@@ -226,11 +226,20 @@ import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 https://reacttraining.com/react-router/web/example/basic
 
 
+![Imagenes](https://github.com/checho1998/LAB-2-IETI-React-Material/blob/master/Imagenes/3.PNG)
+
+![Imagenes](https://github.com/checho1998/LAB-2-IETI-React-Material/blob/master/Imagenes/4.PNG)
+
+
 8. Add a state *isLoggedIn* to the `App.js` component to know when and what view to display.
 
 Tip: Don't attempt to use the _Redirect_ component of the React Router to handle your public and private routes. For now, it would be enough to allow or forbid the access to a _Route_ by using boolean javascript expression inside your JSX.
 
 9. Set the default value of *isLoggedIn* to false and then add a condition inside the render method that renders the correct view.
+
+
+![Imagenes](https://github.com/checho1998/LAB-2-IETI-React-Material/blob/master/Imagenes/5.PNG)
+
 
 
 ## Part 3: Local Storage
@@ -258,3 +267,6 @@ This will prevent the user authentication every time!
 
 Tip: You can use the Google Chrome Developer tools under the Application tab to explore the Local Storage. 
    
+![Imagenes](https://github.com/checho1998/LAB-2-IETI-React-Material/blob/master/Imagenes/7.PNG)
+
+![Imagenes](https://github.com/checho1998/LAB-2-IETI-React-Material/blob/master/Imagenes/8.PNG)

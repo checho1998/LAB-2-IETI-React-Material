@@ -2,20 +2,27 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {TodoList} from "./TodoList";
+import { TodoApp } from './TodoApp.js';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import moment from "moment";
 import { Login } from "./components/Login";
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
+
+const  LoginView  =  ( )  =>  ( 
+	      < Login / > 
+	  ) ;
+
+	const  TodoAppView  =  ( )  =>  ( 
+	      < TodoApp / > 
+	  ) ;
 
 class App extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {items: [], text: '', priority: 0, dueDate: moment()};
-        this.handleTextChange = this.handleTextChange.bind(this);
-        this.handlePriorityChange = this.handlePriorityChange.bind(this);
-        this.handleDateChange = this.handleDateChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        localStorage.setItem('emailDefault', "SergioNuñez");
+        localStorage.setItem('passwordDefault', "ieti2020");
     }
 
 
@@ -23,59 +30,29 @@ class App extends Component {
 
         return (
         	
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h1 className="App-title">TODO React App</h1>
-                </header>
-
-                <br/>
-                
-                <br/>
-                < Login />
-                
-                <form onSubmit={this.handleSubmit} className="todo-form">
-                    <h3>New TODO</h3>
-                    <label htmlFor="text" className="right-margin">
-                        Text:
-                    </label>
-
-                    <input
-                        id="text"
-                        onChange={this.handleTextChange}
-                        value={this.state.text}>
-                    </input>
+        		<Router>
+                <div className="App">
+                    <header className="App-header">
+                        <img src={logo} className="App-logo" alt="logo"/>
+                        <h1 className="App-title">TODO React App</h1>
+                    </header>
 
                     <br/>
                     <br/>
-                    <label htmlFor="priority" className="right-margin">
-                        Priority:
-                    </label>
 
-                    <input
-                        id="priority"
-                        type="number"
-                        onChange={this.handlePriorityChange}
-                        value={this.state.priority}>
-                    </input>
-                    <br/>
-                    <br/>
+                    <ul>
+                    {localStorage.getItem('Logged') === "true" ?
+                            <li><Link to="/todo">Todo</Link></li> : <li><Link to="/">Login</Link></li>
+                          }
+                    </ul>
 
-                    <DatePicker
-                        id="due-date"
-                        selected={this.state.dueDate}
-                        placeholderText="Due date"
-                        onChange={this.handleDateChange}>
-                    </DatePicker>
-                    <br/>
-                    <button>
-                        Add #{this.state.items.length + 1}
-                    </button>
-                </form>
-                <br/>
-                <br/>
-                <TodoList todoList={this.state.items}/>
-            </div>
+                    <div>
+                    {localStorage.getItem('Logged') === "true" ?
+                            < Route path="/todo" component={TodoAppView} /> : <Route exact path="/" component={LoginView} />
+                          }
+                    </div>
+                </div>
+            </Router>
         );
     }
 
